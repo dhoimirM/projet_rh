@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./CSS/styleThree.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<nav>
+			<img src="./img/LogoThree.png" alt="logo">
+			<h1>Tableau de Bord</h1>
+		</nav>
+		<main>
+			<div id="bande">
+				<h3>{{companyName}}</h3>
+				<a href="/workerRegister">
+					<button>Ajouter employé</button>
+				</a>
+			</div>
+			<div class="row">
+				{% for worker in workers %}
+					<div class="identity">
+						<div id="card">
+							<img src="./uploads/{{worker.photo}}" alt="employé">
+						</div>
+						<div id="information">
+							<p>Nom:
+								{{worker.name}}</p>
+							<p>Prenom:
+								{{worker.prenom}}</p>
+							<p>Poste:
+								{{worker.poste}}</p>
+							<div>
+								<p>Blame:
+									{{worker.blame}}</p>
+							</div>
+							<div id="button">
+								<a href="/workerUpdate/{{worker.id}}">
+									<button>Modifier</button>
+								</a>
+								<a href="/workerBlame/{{worker.id}}">
+									<button>Blame</button>
+								</a>
+								<a href="/workerDelete/{{worker.id}}">
+									<button>Supprimer</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</main>
+		<footer>
+			<a href="/logout">
+				<button>DECONNEXION</button>
+			</a>
+		</footer>
+	</body>
+</html>
