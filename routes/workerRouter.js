@@ -1,6 +1,6 @@
 const { companyModel } = require("../models/companyModel");
 const { workerModel } = require("../models/workerModel");
-const authGuard = require("../service/authGuard");
+const authGuard = require("../service/authguard");
 const upload = require('../service/multer')
 const  workerRouter  = require("express").Router();
 
