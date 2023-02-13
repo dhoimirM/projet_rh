@@ -1,8 +1,8 @@
 const express = require("express"); //Ca permet d'appeler la bibliotheque express ca facilite l'intégration des données
 const session = require("express-session");//permet de pouvoir se connecteer et ouvrir une connexion quand on fait des login
 const mongoose = require("mongoose");// Mongoose est le lien entre mongoDB et le serveur
-const companyRouter = require("./Routes/companyRouter");
-const workerRouter = require ("./Routes/workerRouter");
+const companyRouter = require("./routes/companyRouter");
+const workerRouter = require ("./routes/workerRouter");
 require("dotenv").config()// Caché les données et aussi creer des exception lors du transfert de donnée de github
 
 const db = process.env.BDD_URL //Création du cryptage 
